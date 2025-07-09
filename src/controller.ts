@@ -14,9 +14,16 @@ interface User {
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
-
 export const login = async (req: Request, res: Response) => {
-    const { username, password } = req.body;
+    let { username, password } = req.body;
+
+
+    if(!username || !password){
+        return res.status(400).send("Username and password is required")
+    }
+
+    username = username.toLowerCase();
+
     const userDetails = users.find((user: User) => user.username === username);
     if (!userDetails) {
         return res.status(401).send("Invalid username or password");
@@ -34,7 +41,7 @@ export const login = async (req: Request, res: Response) => {
         { expiresIn: '1h' }
     );
 
-    res.status(200).header({ "x-aut-tokenh": token });
+    res.status(200).header({ "x-aut-token": token }).json({"message": "Success"});
 };
 
 export const getConfig = async (req: Request, res: Response) => {
@@ -43,4 +50,3 @@ export const getConfig = async (req: Request, res: Response) => {
     res.status(200).json({ "data": config });
 
 };
-

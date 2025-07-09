@@ -1,17 +1,17 @@
 export const users =[
     {
-        username : "John",
-        password : "",
+        username : "john",
+        password : "$2b$10$Xc31Gd/pqxcgbGyZaXJ6i.vJoXB5.PdNIGFKQEQUXwCXTwvRWOJDu",
         role : 'admin'
     },
     {
-        username : "Jane",
-        password : "",
-        role : 'admin'
+        username : "jane",
+        password : "$2b$10$Xc31Gd/pqxcgbGyZaXJ6i.vJoXB5.PdNIGFKQEQUXwCXTwvRWOJDu",
+        role : 'poc'
     },
     {
-        username : "Hrihsikesh",
-        password : "",
+        username : "hrishikesh",
+        password : "$2b$10$Q9xkequh2ua8N2rBq1qGouhdrBw.QsisirG8BeBBNYmv5k0jhvO76",
         role : 'admin'
     },
 ]
